@@ -7,12 +7,6 @@
     <Product>SoundTouchPitchAndTempo</Product>
     <Copyright>Copyright ©  2018</Copyright>
     <UseWPF>true</UseWPF>
-    <PostBuildEvent>xcopy /y /d  "$(ProjectDir)Libs\*.dll" "$(TargetDir)"</PostBuildEvent>
-    <PostBuildEvent>xcopy /y /d  "$(ProjectDir)Libs\*.dll" "$(TargetDir)"</PostBuildEvent>
-    <PostBuildEvent>xcopy /y /d  "$(ProjectDir)Libs\*.dll" "$(TargetDir)"</PostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>xcopy /y /d  "$(ProjectDir)Libs\*.dll" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http" />

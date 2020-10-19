@@ -5,7 +5,6 @@ using CSCore.Utils;
 
 namespace CSCore.XAudio2
 {
-    [CLSCompliant(false)]
     [RemoveObj]
     public class InteropCalls
     {

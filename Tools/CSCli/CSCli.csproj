@@ -8,6 +8,6 @@
     <Copyright>Copyright © Microsoft 2012</Copyright>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Mono.Cecil" Version="0.9.5.4" />
+    <PackageReference Include="Mono.Cecil" Version="0.11.3" />
   </ItemGroup>
 </Project>
