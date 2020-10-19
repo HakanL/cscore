@@ -4,7 +4,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Net.Configuration;
 using System.Reflection;
 using System.Threading;
 using CSCore.Utils;
@@ -194,7 +193,7 @@ namespace CSCore.Codecs.MP3
                     _bufferThread.Start(resetEvent);
 
                     success = resetEvent.WaitOne();
-                    if(success)
+                    if (success)
                         _decoder = new DmoMp3Decoder(new ReadBlockStream(_buffer.ToStream()), false);
                 }
                 EventHandler<ConnectionEstablishedEventArgs> handler = ConnectionEstablished;
@@ -231,7 +230,7 @@ namespace CSCore.Codecs.MP3
                     throw new WebException("Could not create WebResponse to {" + StreamAddress.AbsolutePath + "}");
 
                 Stream responseStream = _response.GetResponseStream();
-// ReSharper disable once PossibleNullReferenceException
+                // ReSharper disable once PossibleNullReferenceException
                 responseStream.ReadTimeout = 1500;
                 _stream = new ReadBlockStream(responseStream);
                 return true;
@@ -405,8 +404,10 @@ namespace CSCore.Codecs.MP3
         //Copied from http://social.msdn.microsoft.com/forums/en-US/netfxnetcom/thread/ff098248-551c-4da9-8ba5-358a9f8ccc57/
         private static bool SetAllowUnsafeHeaderParsing20()
         {
-            //Get the assembly that contains the internal class
-            Assembly aNetAssembly = Assembly.GetAssembly(typeof (SettingsSection));
+            throw new NotImplementedException("Not compatible with .NET Standard 2.0");
+
+            /*//Get the assembly that contains the internal class
+            Assembly aNetAssembly = Assembly.GetAssembly(typeof(SettingsSection));
             if (aNetAssembly != null)
             {
                 //Use the assembly in order to get the internal type for the internal class
@@ -417,7 +418,7 @@ namespace CSCore.Codecs.MP3
                     //If the static instance isn't created allready the property will create it for us.
                     object anInstance = aSettingsType.InvokeMember("Section",
                         BindingFlags.Static | BindingFlags.GetProperty | BindingFlags.NonPublic, null, null,
-                        new object[] {});
+                        new object[] { });
 
                     if (anInstance != null)
                     {
@@ -432,7 +433,7 @@ namespace CSCore.Codecs.MP3
                     }
                 }
             }
-            return false;
+            return false;*/
         }
     }
 }

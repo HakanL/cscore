@@ -20,7 +20,7 @@ namespace CSCore.Test.Utils
             {
                 fixed (byte* ptr = buffer)
                 {
-                    BitReader reader = new BitReader(ptr, 0);
+                    var reader = new BitReader(ptr, 0);
                     reader.ReadBit();
                     reader.ReadBits(10);
                     reader.ReadBits(15);
